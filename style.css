@@ -1,0 +1,199 @@
+/* --- ================================== --- */
+/* ---           GLOBAL STYLES          --- */
+/* --- ================================== --- */
+:root {
+    --primary-color: #FFC107;
+    --dark-bg: #2C2C2C;
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --body-bg: #ffffff;
+    --card-bg: #f9f9f9;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--body-bg); color: var(--text-dark); line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+h1, h2, h3, h4 { line-height: 1.2; font-weight: 600; }
+
+/* --- ================================== --- */
+/* ---         SHARED COMPONENTS        --- */
+/* --- ================================== --- */
+header { background-color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+nav { display: flex; justify-content: space-between; align-items: center; height: 80px; }
+.logo { display: flex; align-items: center; font-weight: 600; font-size: 1.2rem; }
+.logo img { height: 30px; margin-right: 10px; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { color: #555; font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-dark); border-bottom-color: var(--primary-color); }
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: #333; }
+footer { background-color: var(--dark-bg); color: var(--text-light); padding: 40px 0; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-logo .logo { font-size: 1.1rem; }
+.footer-logo img { filter: brightness(0) invert(1); }
+.footer-credit { font-size: 0.8rem; color: #aaa; text-align: right; }
+.cta-button { background: linear-gradient(90deg, #FFC107, #FF9800); color: var(--text-dark); border: none; padding: 15px 35px; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4); display: inline-block; }
+.cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5); }
+
+/* --- ================================== --- */
+/* ---        HOMEPAGE & INSTRUMENTS    --- */
+/* --- ================================== --- */
+.hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.avif') no-repeat center center/cover; min-height: 60vh; display: flex; align-items: center; color: var(--text-light); text-align: center; }
+.hero-content { max-width: 700px; margin: 0 auto; }
+.hero h1 { font-size: 3.5rem; font-weight: 700; margin: 10px 0; }
+.hero-subtitle { font-size: 1.1rem; margin-bottom: 30px; }
+.featured { padding: 80px 0; background-color: #f9f9f9;}
+.featured h2 { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
+.instrument-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.instrument-card { background-color: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; }
+.instrument-card:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(0,0,0,0.1); }
+.instrument-card img { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 15px; }
+.instrument-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.instrument-card p { font-size: 0.9rem; color: #666; }
+.collection-header { padding: 60px 0; text-align: center; }
+.collection-header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+.collection-header p { font-size: 1.1rem; color: #666; }
+.instrument-collection { padding: 0 0 80px 0; }
+.collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.collection-card { background-color: #fff; border-radius: 12px; border: 1px solid #eee; text-align: center; transition: all 0.3s ease; cursor: pointer; }
+.collection-card:hover { transform: translateY(-5px); box-shadow: 0 6px 25px rgba(0,0,0,0.08); }
+.collection-card img { max-width: 100%; height: auto; padding: 20px; }
+.collection-card h3 { font-size: 1.1rem; }
+.collection-card p { font-size: 0.9rem; color: #777; padding-bottom: 20px; }
+
+/* ---================================== --- */
+/* ---      GENERATOR PAGE              --- */
+/* --- ================================== --- */
+.generator-page { background-color: #f0f2f5; }
+.generator-page .page-content { padding: 40px 0; min-height: calc(100vh - 80px); }
+.generator-grid { display: grid; grid-template-columns: 280px 1fr; grid-template-rows: auto auto 1fr; grid-template-areas: "location viewer" "instrument viewer" "dimensions viewer" "export viewer" ; gap: 25px; }
+.generator-panel { background-color: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.generator-panel h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; }
+.location-panel { grid-area: location; }
+.instrument-panel { grid-area: instrument; }
+.viewer-panel { grid-area: viewer; display: flex; flex-direction: column; }
+.dimensions-panel { grid-area: dimensions; }
+.export-panel { grid-area: export; align-self: start; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 500; margin-bottom: 5px; color: #555; }
+.form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Poppins', sans-serif; }
+.generate-button-container { margin-top: 20px; }
+.btn-primary {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    flex: 1;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+    background-color: #ffca28;
+}
+.btn-primary:active {
+    background-color: #f5b700;
+    transform: translateY(1px);
+}
+.btn-full { width: 100%; }
+.btn-secondary {
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-secondary:hover {
+    background-color: #dce1e6;
+}
+.btn-secondary:active {
+    transform: translateY(1px);
+    background-color: #d1d6dc;
+}
+.status-message {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 10px;
+    min-height: 1.2em;
+    transition: color 0.3s;
+}
+.status-message.error {
+    color: #c0392b;
+}
+.dimensions-list { list-style: none; }
+.dimensions-list li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
+.dimensions-list li span {
+    padding-right: 15px;
+}
+.dimensions-list li strong {
+    flex-grow: 1;
+    text-align: right;
+}
+.view-toggle { display: flex; justify-content: center; margin-bottom: 15px; background-color: #e9ecef; border-radius: 8px; padding: 5px; }
+.toggle-btn { background-color: transparent; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 500; cursor: pointer; flex: 1; }
+.toggle-btn.active { background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.model-viewer-container { flex-grow: 1; border-radius: 10px; background-color: #e0e2e5; position: relative; overflow: hidden;}
+#model-viewer-3d { width: 100%; height: 100%; cursor: grab; }
+#model-viewer-3d:active { cursor: grabbing; }
+#model-viewer-2d { width: 100%; height: 100%; object-fit: contain; display: none; }
+.export-panel p { color: #555; font-size: 0.9rem; margin-bottom: 20px; }
+
+/* === THIS IS THE FIX FOR THE DOWNLOAD BUTTON === */
+.btn-export {
+    display: block;
+    background-color: #e9ecef;
+    padding: 12px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-export:hover {
+    background-color: #dce1e6;
+}
+.btn-export:active {
+    background-color: #d1d6dc;
+    transform: translateY(1px);
+}
+/* === END OF FIX === */
+
+/* --- ================================== --- */
+/* ---         MODAL STYLES             --- */
+/* --- ================================== --- */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+.modal.active { display: flex; }
+.modal-content { background-color: #fff; margin: auto; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; position: relative; box-shadow: 0 5px 25px rgba(0,0,0,0.2); animation: fadeIn 0.3s; }
+.modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 20px; }
+.modal-header h2 { font-size: 1.5rem; }
+.modal-body { display: flex; gap: 20px; }
+.modal-image { flex: 0 0 200px; }
+.modal-image img { width: 100%; border-radius: 8px; }
+.modal-text p { font-size: 0.95rem; color: #555; }
+.close-btn { color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; }
+.close-btn:hover, .close-btn:focus { color: #333; }
+@keyframes fadeIn { from {opacity: 0; transform: translateY(-20px);} to {opacity: 1; transform: translateY(0);} }
+@media (max-width: 576px) { .modal-body { flex-direction: column; } }
+
+/* --- ================================== --- */
+/* ---        RESPONSIVE DESIGN         --- */
+/* --- ================================== --- */
+@media (max-width: 992px) {
+    .instrument-grid, .collection-grid { grid-template-columns: repeat(2, 1fr); }
+    .generator-grid { grid-template-columns: 1fr; grid-template-areas: "location" "instrument" "viewer" "dimensions" "export"; }
+    .viewer-panel { min-height: 50vh; }
+}
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links { position: fixed; top: 80px; right: -100%; width: 100%; height: calc(100vh - 80px); background-color: #fff; flex-direction: column; align-items: center; justify-content: center; gap: 40px; transition: right 0.4s ease-in-out; display: flex; }
+    .nav-links.active { right: 0; }
+}
+@media (max-width: 576px) {
+    .instrument-grid, .collection-grid { grid-template-columns: 1fr; }
+}

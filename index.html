@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroYantra.ai - An Ancient Astronomy Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Logo"><span>AstroYantra.ai</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li><a href="generator.html" class="nav-link">Generator</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="page-content">
+            <section class="hero">
+                <div class="container hero-content">
+                    <h1>Rediscover Ancient Astronomy</h1>
+                    <p class="hero-subtitle">Generate 3D models and blueprints of timeless astronomical marvels for any location.</p>
+                    <a href="generator.html" class="cta-button">Start Generating</a>
+                </div>
+            </section>
+            <section class="featured">
+                <div class="container">
+                    <h2>Featured Instruments</h2>
+                    <div class="instrument-grid">
+                        <div class="instrument-card" data-title="Samrat Yantra" data-img-src="samrat-yantra01.jpg" data-description="The Samrat Yantra, or 'Supreme Instrument', is a massive equal-hour sundial. Its gnomon's hypotenuse is parallel to the Earth's axis, allowing it to measure local time with remarkable precision, often to within two seconds."><h3>Samrat Yantra</h3><p>A giant sundial, the largest in the world.</p></div>
+                        <div class="instrument-card" data-title="Rama Yantra" data-img-src="rama-yantra.jpg" data-description="The Rama Yantra consists of a pair of cylindrical structures, open to the sky. It is used to measure the altitude and azimuth (horizontal angle) of celestial objects, making it essential for mapping the sky."><h3>Rama Yantra</h3><p>Measures the altitude and azimuth of celestial objects.</p></div>
+                        <div class="instrument-card" data-title="Misra Yantra" data-img-src="misra-blueprint.jpg" data-description="The Misra Yantra, or 'Mixed Instrument', is a composite of five different instruments. It is unique to the Delhi observatory and was used to determine the exact moment of noon in various cities around the world."><h3>Misra Yantra</h3><p>A composite instrument that indicates noon at various cities.</p></div>
+                        <div class="instrument-card" data-title="Jai Prakash Yantra" data-img-src="jai-prakash-yantra.jpg" data-description="The Jai Prakash Yantra is a hollowed-out hemisphere that acts as a map of the celestial sphere. An observer can align markings inside the bowl with celestial bodies to determine their positions, providing a direct visual representation of the sky."><h3>Jai Prakash Yantra</h3><p>Hemispherical bowls that map the sky.</p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo"><a href="index.html" class="logo"><img src="logo.png" alt="Logo"><span>AstroYantra.ai</span></a></div>
+            <div class="footer-credit"><p>AstroYantra Initiative &copy; 2025</p></div>
+        </div>
+    </footer>
+
+    <div id="instrumentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Instrument Title</h2><span id="modalCloseBtn" class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image"><img id="modalImage" src="" alt="Instrument Image"></div>
+                <div class="modal-text"><p id="modalDescription">Instrument description goes here.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

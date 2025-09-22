@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Generator - AstroYantra.ai</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo"><img src="logo.png" alt="Logo"><span>AstroYantra.ai</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="instruments.html" class="nav-link">Instruments</a></li>
+                <li><a href="generator.html" class="nav-link active">Generator</a></li>
+            </ul>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <main class="generator-page">
+        <div class="page-content generator-main">
+            <div class="container generator-grid">
+                <div class="generator-panel location-panel">
+                    <h3>1. Set Location</h3>
+                    <div class="form-group"><label for="latitude-gen">Latitude</label><input type="text" id="latitude-gen" placeholder="e.g., 23.2599"></div>
+                    <div class="form-group"><label for="longitude-gen">Longitude</label><input type="text" id="longitude-gen" placeholder="e.g., 77.4126"></div>
+                    
+                    <button id="btn-geolocate" class="btn-full btn-secondary">Use My Location</button>
+                    <div id="geolocation-status" class="status-message"></div>
+                </div>
+
+                <div class="generator-panel instrument-panel">
+                    <h3>2. Select an Instrument</h3>
+                    <div class="form-group">
+                        <label for="instrument-select">Instrument Type</label>
+                        <select id="instrument-select">
+                            <option value="samrat">Samrat Yantra</option>
+                            <option value="misra">Misra Yantra</option>
+                        </select>
+                    </div>
+                    <div class="generate-button-container">
+                        <button id="btn-generate" class="btn-primary btn-full">Generate</button>
+                    </div>
+                </div>
+
+                <div class="generator-panel viewer-panel">
+                    <div class="view-toggle">
+                        <button id="btn-2d" class="toggle-btn">2D Blueprint</button>
+                        <button id="btn-3d" class="toggle-btn active">3D Model</button>
+                    </div>
+                    <div class="model-viewer-container">
+                         <div id="model-viewer-3d">
+                            <p style="text-align:center; padding-top: 40%; color: #888;">Select an instrument and click Generate to view a model.</p>
+                         </div>
+                         <div id="model-viewer-2d" style="display: none; background-color: #2c3e50;">
+                            <canvas id="blueprint-canvas" resize></canvas>
+                         </div>
+                    </div>
+                </div>
+                <div class="generator-panel dimensions-panel">
+                    <h3 id="dimensions-heading">3. Generated Dimensions</h3>
+                    <ul id="dimensions-list" class="dimensions-list">
+                        <li><span>Select an instrument and location.</span></li>
+                    </ul>
+                </div>
+                <div class="generator-panel export-panel">
+                    <h3>4. Export Your model</h3>
+                    <a href="#" id="btn-download" class="btn-export btn-full">Download Files</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <div class="footer-logo"><a href="index.html" class="logo"><img src="logo.png" alt="Logo"><span>AstroYantra.ai</span></a></div>
+            <div class="footer-credit"><p>AstroYantra Initiative &copy; 2025</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
